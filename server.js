@@ -80,7 +80,7 @@ app.get("/login", (req, res) => {
   url.searchParams.set("client_id",             CLIENT_ID);
   url.searchParams.set("redirect_uri",          REDIRECT_URI);
   url.searchParams.set("response_type",         "code");
-  url.searchParams.set("scope",                 "openid,AdobeID,read_organizations");
+  url.searchParams.set("scope",                 "openid,AdobeID");
   url.searchParams.set("state",                 state);
   url.searchParams.set("code_challenge",        challenge);
   url.searchParams.set("code_challenge_method", "S256");
