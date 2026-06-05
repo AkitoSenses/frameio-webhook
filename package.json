@@ -1,0 +1,16 @@
+{
+  "name": "frameio-webhook",
+  "version": "1.0.0",
+  "description": "Webhook Frame.io → routing automatique + notification Slack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "node-fetch": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
