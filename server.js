@@ -11,6 +11,8 @@ app.use(express.json());
 const SLACK_TOKEN    = process.env.SLACK_TOKEN;
 const PORT           = process.env.PORT || 3000;
 const CLIENT_ID      = "85bccc906ca944d9a271d04f798e0bde";
+const CLIENT_SECRET  = process.env.CLIENT_SECRET;
+const CLIENT_SECRET  = process.env.CLIENT_SECRET;
 const REDIRECT_URI   = "https://frameio-webhook-production.up.railway.app/callback";
 const TOKEN_FILE     = "/tmp/frameio_tokens.json";
 
@@ -114,6 +116,7 @@ app.get("/callback", async (req, res) => {
       body: new URLSearchParams({
         grant_type:    "authorization_code",
         client_id:     CLIENT_ID,
+        client_secret: CLIENT_SECRET,
         code,
         redirect_uri:  REDIRECT_URI,
         code_verifier: verifier
@@ -159,6 +162,7 @@ async function getValidToken() {
       body: new URLSearchParams({
         grant_type:    "refresh_token",
         client_id:     CLIENT_ID,
+        client_secret: CLIENT_SECRET,
         refresh_token: tokens.refresh_token
       })
     });
